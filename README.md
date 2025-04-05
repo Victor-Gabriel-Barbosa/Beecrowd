@@ -60,7 +60,7 @@ Este projeto não possui uma licença específica. Sinta-se à vontade para usar
 ## 📬 Contato
 
 Se você tiver alguma dúvida ou sugestão, entre em contato:
-- **Email**: [seu-email@example.com](mailto:seu-email@example.com)
+- **Email**: [victorgabrielbarbosa88@gmail.com](mailto:victorgabrielbarbosa88@gmail.com)
 - **GitHub**: [Victor-Gabriel-Barbosa](https://github.com/Victor-Gabriel-Barbosa)
 
 ---
