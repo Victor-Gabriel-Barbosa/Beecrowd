@@ -8,10 +8,10 @@ Este repositório contém soluções para exercícios propostos no Beecrowd. Os 
 
 ## 📁 Estrutura do Repositório
 
-- **/Iniciante**: Contém os arquivos de código-fonte para cada os exercícios da categoria Iniciantes.
-- **/Estruturas-e-Bibliotecas**: Contém os arquivos de código-fonte para cada os exercícios da categoria Estruturas e Bibliotecas.
-- **/Strings**: Contém os arquivos de código-fonte para cada os exercícios da categoria Strings.
-- **/Grafos**: Contém os arquivos de código-fonte para cada os exercícios da categoria Grafos.
+- **/Iniciante**: Contém os arquivos de código-fonte para os exercícios da categoria Iniciantes.
+- **/Estruturas-e-Bibliotecas**: Contém os arquivos de código-fonte para os exercícios da categoria Estruturas e Bibliotecas.
+- **/Strings**: Contém os arquivos de código-fonte para os exercícios da categoria Strings.
+- **/Grafos**: Contém os arquivos de código-fonte para os exercícios da categoria Grafos.
 
 ## 🚀 Como Usar
 
