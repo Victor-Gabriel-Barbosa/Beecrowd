@@ -133,6 +133,9 @@
     "ostream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "list": "cpp",
+    "unordered_set": "cpp",
+    "cstring": "cpp"
   }
 }
