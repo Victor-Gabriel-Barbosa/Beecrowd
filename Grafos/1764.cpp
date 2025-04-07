@@ -34,7 +34,7 @@ public:
     vector<int> pai(V);
 
     // Armazena o índice da aresta mais leve que conecta dois componentes
-    vector<int> maisBarato(V, -1);
+    vector<int> maisBarato(V);
 
     // Inicialmente, cada vértice está em seu próprio componente
     for (int i = 0; i < V; i++) pai[i] = i;
@@ -119,8 +119,7 @@ int main() {
     }
 
     // Calcula e imprime o resultado
-    int resultado = cidades.boruvkaMST();
-    cout << resultado << endl;
+    cout << cidades.boruvkaMST() << endl;
   } while (M != 0 || N != 0);
 
   return 0;
