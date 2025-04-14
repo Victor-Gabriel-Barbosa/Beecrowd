@@ -1,23 +1,23 @@
 #include <algorithm>
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
-// Estrutura para representar uma aresta
+// Estrutura para representar uma aresta (caminho entre cidades)
 struct Aresta {
   int origem, destino, peso;
 };
 
-// Estrutura para representar um grafo
+// Classe para representar o grafo (cidades e caminhos)
 class Grafo {
 private:
-  int V;                  // Número de vértices
-  vector<Aresta> arestas; // Lista de arestas
+  int numVertices;        // Número de vértices (cidades)
+  vector<Aresta> arestas; // Lista de arestas (caminhos)
 
 public:
-  Grafo(int V) { 
-    this->V = V; 
+  // Construtor do grafo
+  Grafo(int numVertices) { 
+    this->numVertices = numVertices; 
   }
 
   // Adiciona uma aresta não direcionada ao grafo
@@ -30,21 +30,21 @@ public:
   int boruvkaMST() {
     int pesoTotal = 0;
 
-    // Armazena qual componente cada vértice pertence
-    vector<int> pai(V);
+    // Armazena a qual componente cada vértice pertence
+    vector<int> pai(numVertices);
 
     // Armazena o índice da aresta mais leve que conecta dois componentes
-    vector<int> maisBarato(V);
+    vector<int> maisBarato(numVertices);
 
     // Inicialmente, cada vértice está em seu próprio componente
-    for (int i = 0; i < V; i++) pai[i] = i;
+    for (int i = 0; i < numVertices; i++) pai[i] = i;
 
     // Número de componentes iniciais é igual ao número de vértices
-    int numComp = V;
+    int numComponentes = numVertices;
 
     // Continua até que todos os vértices estejam em um único componente
-    while (numComp > 1) {
-      // Inicializa maisBarato para cada componente
+    while (numComponentes > 1) {
+      // Inicializa maisBarato para cada componente (como -1)
       fill(maisBarato.begin(), maisBarato.end(), -1);
 
       // Para cada aresta, verifica se é a mais leve para conectar dois componentes
@@ -63,13 +63,14 @@ public:
       }
 
       // Adiciona as arestas mais leves à MST
-      for (int i = 0; i < V; i++) {
-        // Se não há aresta para o componente, ignora
+      for (int i = 0; i < numVertices; i++) {
+        // Ignora se não há aresta para o componente
         if (maisBarato[i] == -1) continue;
 
         int conj1 = encontrarRaiz(pai, arestas[maisBarato[i]].origem);
         int conj2 = encontrarRaiz(pai, arestas[maisBarato[i]].destino);
 
+        // Une os componentes se os vértices estão em componentes diferentes
         if (conj1 != conj2) {
           // Adiciona o peso da aresta ao total
           pesoTotal += arestas[maisBarato[i]].peso;
@@ -78,7 +79,7 @@ public:
           unirConjuntos(pai, conj1, conj2);
 
           // Decrementa o número de componentes
-          numComp--;
+          numComponentes--;
         }
       }
     }
@@ -101,26 +102,26 @@ public:
 };
 
 int main() {
-  int M, N; // M = número de cidades, N = número de caminhos
+  int numCidades, numCaminhos;
 
   do {
-    cin >> M >> N;
+    cin >> numCidades >> numCaminhos;
 
-    if (M == 0 && N == 0) continue; 
+    if (numCidades == 0 && numCaminhos == 0) continue; 
 
-    // Cria o grafo com M vértices (cidades)
-    Grafo cidades(M);
+    // Cria o grafo com o número de cidades (vértices)
+    Grafo cidades(numCidades);
 
-    // Leitura das arestas
-    for (int i = 0; i < N; i++) {
-      int X, Y, Z; // X e Y são as cidades, Z é a distância
-      cin >> X >> Y >> Z;
-      cidades.adicionarAresta(X, Y, Z);
+    // Adiciona as arestas (caminhos) ao grafo
+    for (int i = 0; i < numCaminhos; i++) {
+      int cidade1, cidade2, distancia;
+      cin >> cidade1 >> cidade2 >> distancia;
+      cidades.adicionarAresta(cidade1, cidade2, distancia);
     }
 
-    // Calcula e imprime o resultado
+    // Calcula e imprime o peso total da MST
     cout << cidades.boruvkaMST() << endl;
-  } while (M != 0 || N != 0);
+  } while (numCidades != 0 || numCaminhos != 0);
 
   return 0;
 }
