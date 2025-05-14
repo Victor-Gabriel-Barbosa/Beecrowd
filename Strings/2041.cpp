@@ -23,6 +23,6 @@ string Godelito(string sequencia, int n) {
 
 int main() {
   int n;
-  while (cin >> n) cout << Godelito("2", n) << endl;
+  while (cin >> n) cout << Godelito("3", n) << endl;
   return 0;
 }
