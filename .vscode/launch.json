@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/usuario/Desktop/Programas/Beecrowd/Iniciante",
-      "program": "c:/Users/usuario/Desktop/Programas/Beecrowd/Iniciante/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
